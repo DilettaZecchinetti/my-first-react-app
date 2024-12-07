@@ -9,21 +9,27 @@ const ListAdder = ({ setShowList }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        setShowList((currShowList) => {
-            return [...currShowList, newShow]
-        });
-        setNewShow("");
+        if (newShow.trim()) {
+            // Add new show to the list
+            setShowList((currShowList) => [...currShowList, newShow.trim()]);
+            setNewShow("");
+        }
     };
 
     return (
-        <footer>
+        <div className='form-container'>
             <form onSubmit={handleSubmit}>
-                <input placeholder="What show are you currently watching?" type="text" id="show" onChange={handleChange} value={newShow} />
+                <input
+                    placeholder="What show are you currently watching?"
+                    type="text"
+                    id="show"
+                    onChange={handleChange}
+                    value={newShow}
+                />
                 <input type="submit" value="Add to your list" />
             </form>
-        </footer>
-    )
-}
+        </div>
+    );
+};
 
 export default ListAdder;

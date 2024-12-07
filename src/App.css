@@ -1,0 +1,213 @@
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+    color: #333;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif; /* Clean and modern font */
+    font-size: 3rem; /* Adjust size for sleekness */
+    font-weight: 700; /* Bold text for emphasis */
+    color: #fff; /* White color for contrast */
+    letter-spacing: 1px; /* Slight letter-spacing for sleekness */
+    text-transform: uppercase; /* Adds bold, modern style */
+    padding: 15px;
+    background: linear-gradient(45deg, #4CAF50, #81C784); /* Smooth green gradient */
+    background-clip: text; /* Makes gradient apply only to text */
+    color: transparent; /* Hides the default text color */
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    display: inline-block; /* Keeps title inline with spacing */
+    transform: translateY(0); /* Ensures it's aligned correctly */
+    animation: fadeInTitle 1s ease-out; /* Fade-in animation */
+}
+
+/* Emojis (subtle styling) */
+h1 span {
+    font-size: 1.4rem; /* Increase emoji size */
+    margin-left: 10px;
+    animation: scaleIn 0.5s ease-out; /* Emoji animation for emphasis */
+}
+
+/* Fade-in Animation for the Title */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Emoji Scaling Animation */
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Hover Effect for the Title */
+h1:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    text-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transition: transform 0.3s ease-out;
+}
+
+
+/* Show list container styling */
+.show-list-container {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    max-width: 700px; /* Added max width for consistency */
+}
+
+/* Form container styling */
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Deeper shadow for dimension */
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+ol {
+    list-style: none; /* Remove default decimal bullets */
+    margin: 20px auto;
+    padding: 0;
+    max-width: 600px; /* Restricts width */
+    counter-reset: item; /* Resets the counter for the list items */
+}
+
+li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between; /* Pushes buttons to the right */
+    align-items: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Keeps position for numbers */
+    padding-left: 40px; /* Adds space for number */
+}
+
+li::before {
+    content: counter(item) ". "; /* Display number before the item */
+    counter-increment: item; /* Increment the counter for each list item */
+    position: absolute;
+    left: 15px; /* Adjust left position to give space between the number and the text */
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #4caf50; /* Green color for the number */
+    margin-right: 10px; /* Ensures there's space between the number and the title */
+}
+
+li .buttons {
+    display: flex;
+    justify-content: flex-end; /* Aligns the buttons to the right */
+    gap: 10px; /* Space between buttons */
+}
+
+li:hover {
+    transform: scale(1.03); /* Slight zoom effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+
+/* Button styling */
+button {
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 7px 12px; /* Increased padding */
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* Specific button styles */
+.modify-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    margin-left: 10px;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    margin-left: 5px;
+}
+
+.save-button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    margin-right: 5px;
+}
+
+.cancel-button {
+    background-color: #f1c40f;
+    color: white;
+    border: none;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px; /* More space between form elements */
+}
+
+input[type="text"] {
+    width: 80%;
+    max-width: 450px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add glow effect */
+}
+
+input[type="submit"] {
+    width: 60%;
+    max-width: 250px;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Lift effect */
+}
